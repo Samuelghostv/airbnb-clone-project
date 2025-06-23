@@ -193,3 +193,113 @@ Run tests on every push (e.g., unit tests, lint checks)
 Deploy updates to staging or production environments automatically
 
 Can be set up using GitHub Actions, GitLab CI, Jenkins, etc.
+
+## Database Design 
+
+🔑 Entities, Fields & Relationships
+🧑‍💼 1. Users
+Description: Represents users of the platform (guests or hosts).
+Key Fields:
+
+id (Primary Key)
+
+username
+
+email
+
+password_hash
+
+date_joined
+
+Relationships:
+
+A user can own multiple properties.
+
+A user can make multiple bookings.
+
+A user can leave multiple reviews.
+
+🏠 2. Properties
+Description: Represents host-listed accommodations.
+Key Fields:
+
+id (Primary Key)
+
+owner_id (Foreign Key → Users)
+
+name
+
+location
+
+price_per_night
+
+Relationships:
+
+A property belongs to one user (host).
+
+A property can have many bookings.
+
+A property can receive many reviews.
+
+📅 3. Bookings
+Description: Represents reservations made by users for properties.
+Key Fields:
+
+id (Primary Key)
+
+property_id (Foreign Key → Properties)
+
+user_id (Foreign Key → Users)
+
+start_date
+
+end_date
+
+Relationships:
+
+A booking belongs to one user (guest).
+
+A booking belongs to one property.
+
+A booking has one payment.
+
+💳 4. Payments
+Description: Represents payment transactions for bookings.
+Key Fields:
+
+id (Primary Key)
+
+booking_id (Foreign Key → Bookings)
+
+amount
+
+payment_date
+
+payment_status
+
+Relationships:
+
+A payment belongs to one booking.
+
+⭐ 5. Reviews
+Description: Represents user reviews for properties after a stay.
+Key Fields:
+
+id (Primary Key)
+
+user_id (Foreign Key → Users)
+
+property_id (Foreign Key → Properties)
+
+rating (e.g., 1–5 stars)
+
+comment
+
+Relationships:
+
+A review belongs to one user.
+
+A review belongs to one property.
+
+![alt text](image.png)
+
