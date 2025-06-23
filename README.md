@@ -110,3 +110,86 @@ Design user flows, wireframes, and mockups.
 Conduct usability testing and gather feedback.
 
 Ensure the product aligns with user needs and business goals.
+
+## Technology stack
+
+🐍 Django
+Purpose:
+Django serves as the core backend framework, powering the main application logic.
+
+Handles routing, authentication, and user management.
+
+Manages the interaction between the API and the database.
+
+Provides built-in admin and ORM features for faster development.
+
+🔌 Django REST Framework (DRF)
+Purpose:
+Used to build RESTful APIs that enable frontend clients (like React or mobile apps) to interact with backend data.
+
+Handles serialization of data (e.g., converting model instances into JSON).
+
+Provides authentication, permissions, and throttling for API access.
+
+Simplifies CRUD operations for models like User, Listing, and Booking.
+
+🛢️ PostgreSQL
+Purpose:
+Acts as the primary database for storing structured data such as:
+
+User accounts and profiles
+
+Listings, bookings, payments, reviews
+
+Relationships between different entities (e.g., a user can have many bookings)
+
+🧠 GraphQL
+Purpose:
+Optional or complementary to REST, GraphQL provides a flexible query language to fetch exactly the data the client needs.
+
+Reduces over-fetching/under-fetching compared to REST.
+
+Useful for dynamic frontends that need tailored data structures.
+
+Can live alongside REST endpoints in the same Django project.
+
+🕒 Celery
+Purpose:
+Used to run background tasks asynchronously, improving performance and user experience.
+Examples:
+
+Sending booking confirmation emails
+
+Processing payments or invoices
+
+Scheduling reminders or notifications
+
+⚡ Redis
+Purpose:
+Acts as a message broker for Celery, and is also used for:
+
+Caching frequently used data (like listings)
+
+Session management and storing user sessions
+
+Reducing load on the database
+
+📦 Docker
+Purpose:
+Provides containerization, allowing the project to run in isolated, reproducible environments.
+
+Ensures the same configuration works on all developer machines and servers
+
+Simplifies deployment by packaging the app, database, and services together
+
+Makes testing, scaling, and continuous deployment easier
+
+🔁 CI/CD Pipelines
+Purpose:
+Used to automatically test, build, and deploy code changes, improving code quality and development speed.
+
+Run tests on every push (e.g., unit tests, lint checks)
+
+Deploy updates to staging or production environments automatically
+
+Can be set up using GitHub Actions, GitLab CI, Jenkins, etc.
