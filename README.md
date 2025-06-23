@@ -476,3 +476,54 @@ Use database encryption for fields like personal details.
 Store hashed passwords, never plain text.
 
 Encrypt data before storing in Redis or logs if sensitive.
+
+## CI/CD Pipeline
+
+⚙️ What Are CI/CD Pipelines?
+CI/CD stands for Continuous Integration and Continuous Deployment/Delivery.
+It’s a set of automated processes that help developers:
+
+CI (Continuous Integration): Automatically test and validate code when it's pushed to the repository.
+
+CD (Continuous Deployment/Delivery): Automatically deploy code changes to staging or production environments after passing tests.
+
+🚀 Why CI/CD Is Important for the RNB Project
+🔁 Faster Development Cycles
+
+Automatically run tests and deploy features without manual steps.
+
+✅ Code Quality & Reliability
+
+Every code push triggers automated checks to catch bugs early.
+
+🔄 Consistent Deployments
+
+Ensures the application is deployed the same way every time.
+
+🧪 Safe Collaboration
+
+Multiple developers can contribute without breaking the app, since changes are continuously tested.
+
+📉 Reduces Human Error
+
+Minimizes mistakes during manual testing or deployment.
+
+🛠️ Tools for CI/CD in the RNB Project
+Tool	Purpose
+GitHub Actions	Automates CI/CD workflows directly in the GitHub repo.
+Docker	Ensures consistent environments across development, testing, and deployment.
+Docker Compose	Runs multiple services (e.g., Django app, PostgreSQL, Redis) locally or in CI environments.
+Heroku / AWS / Render	Hosts and deploys the application. Integrates with GitHub or CI tools.
+PostgreSQL	Used in CI to test database-related features.
+Sentry (Optional)	For monitoring errors after deployment.
+
+🧪 Example Workflow with GitHub Actions
+Developer pushes code to GitHub.
+
+GitHub Actions:
+
+Runs tests (pytest, flake8, etc.)
+
+Builds Docker container
+
+Deploys to Heroku (or another platform) if tests pass.
