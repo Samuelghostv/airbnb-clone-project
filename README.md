@@ -111,7 +111,7 @@ Conduct usability testing and gather feedback.
 
 Ensure the product aligns with user needs and business goals.
 
-## Technology stack
+## Technology Stack
 
 🐍 Django
 Purpose:
